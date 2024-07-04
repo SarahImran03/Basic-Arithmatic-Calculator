@@ -2,6 +2,17 @@ import tkinter as tk
 
 calc = ""
 
+#The GUI of the Calculator
+root = tk.Tk()
+root.geometry("300x275")
+root.configure(background="light gray")
+root.title("Basic Arithmatic Calculator")
+
+#The text field of the Calculator
+text_result = tk.Text(root, height=2, width=16, font=("Ariel", 24))
+text_result.grid(columnspan=5)
+
+#The functionality of the Calculator
 def add_to_calc(n):
     global calc
     calc += str(n)
@@ -24,16 +35,6 @@ def clear_field():
     global calc
     calc = ""
     text_result.delete(1.0, "end")
-
-#The GUI of the Calculator
-root = tk.Tk()
-root.geometry("300x275")
-root.configure(background="light gray")
-root.title("Basic Arithmatic Calculator")
-
-#The text field of the Calculator
-text_result = tk.Text(root, height=2, width=16, font=("Ariel", 24))
-text_result.grid(columnspan=5)
 
 #The numerical buttons in the Calculator
 btn_1 = tk.Button(root, text="1", bg="light blue", command=lambda: add_to_calc(1), width=5, font=("Ariel", 14))
